@@ -1,0 +1,13 @@
+# this folder is use for import all libraries that required for the system 
+
+#eg pip install -r requirements.txt
+
+flask
+transformers
+torch
+nltk
+scikit-learn
+numpy
+PyPDF2
+werkzeug
+sentencepiece

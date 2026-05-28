@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Summary Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Summarization Result</h1>
+
+    <!-- Original Text -->
+    <div class="section">
+
+        <h3>Original Text</h3>
+
+        <div class="output-box">
+            {{ text }}
+        </div>
+
+    </div>
+
+    <!-- Generated Summary -->
+    <div class="section">
+
+        <h3>Generated Summary</h3>
+
+        <div class="output-box">
+            {{ summary }}
+        </div>
+
+    </div>
+
+    <!-- Back Button -->
+    <div class="section">
+
+        <a href="/">
+            <button>
+                Summarize Another Document
+            </button>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

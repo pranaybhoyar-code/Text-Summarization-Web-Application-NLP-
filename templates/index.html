@@ -1,68 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>AI Based Text Summarizer</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
 
+<head>
+    <title>AI Text Summarizer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 <body>
 
 <div class="container">
 
-    <h1>AI Based TEXT Summarization</h1>
+    <h1>AI Based Text Summarization</h1>
 
-    <!-- ✅ SINGLE FORM -->
-    <form action="/summarize" method="POST" enctype="multipart/form-data">
+{% if error %}
+<div class="error-message">
+    {{ error }}
+</div>
+{% endif %}
+    <form action="/" method="POST" enctype="multipart/form-data">
 
-        <!-- Step 1 -->
+        <!-- Text Input -->
         <div class="section">
+
             <h3>1. Enter Text or Upload Document</h3>
 
-            <textarea name="text" placeholder="Paste your text here..."></textarea>
+            <textarea name="text"
+                      placeholder="Paste your text here..."></textarea>
 
             <input type="file" name="file">
+
         </div>
 
-        <!-- Step 2 -->
+        <!-- Model Selection -->
         <div class="section">
+
             <h3>2. Select Model</h3>
 
             <label>
-                <input type="radio" name="model" value="bert" checked>
+                <input type="radio"
+                       name="model"
+                       value="bert"
+                       checked>
+
                 BERT (Extractive)
             </label>
 
             <label>
-                <input type="radio" name="model" value="bart">
+                <input type="radio"
+                       name="model"
+                       value="bart">
+
                 BART (Abstractive)
             </label>
+
         </div>
 
-        <!-- Step 3 -->
+        <!-- Submit Button -->
         <div class="section">
-            <button id="summarizeBtn" type="submit">Summarize</button>
+
+            <button id="summarizeBtn" type="submit">
+                Summarize
+            </button>
+
         </div>
 
     </form>
 
-    <!-- Step 4 -->
-    <div class="section">
-        <h3>Summary Output</h3>
-        <div class="output-box">
-            {{ summary }}
-        </div>
-    </div>
-
 </div>
 
-<!-- Button Click Effect -->
-<script>
-document.getElementById("summarizeBtn").addEventListener("click", function() {
-    this.style.backgroundColor = "#999";
-    this.innerText = "Processing...";
-    this.disabled = true;
-});
-</script>
+
 
 </body>
-</html>>
+</html>

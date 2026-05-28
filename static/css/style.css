@@ -1,4 +1,6 @@
-/* Body */
+/* =========================
+   BODY
+========================= */
 body {
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #667eea, #764ba2);
@@ -6,9 +8,13 @@ body {
     padding: 0;
 }
 
-/* Container */
+
+/* =========================
+   MAIN CONTAINER
+========================= */
 .container {
     width: 60%;
+    max-width: 900px;
     margin: 40px auto;
     background: white;
     padding: 30px;
@@ -16,7 +22,10 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* Heading */
+
+/* =========================
+   MAIN HEADING
+========================= */
 h1 {
     text-align: center;
     font-size: 32px;
@@ -24,38 +33,61 @@ h1 {
     color: #333;
 }
 
-/* Sections */
+
+/* =========================
+   SECTION SPACING
+========================= */
 .section {
     margin-bottom: 25px;
 }
 
-/* Sub Headings */
+
+/* =========================
+   SUB HEADINGS
+========================= */
 h3 {
     margin-bottom: 10px;
     color: #555;
 }
 
-/* Textarea */
+
+/* =========================
+   TEXTAREA
+========================= */
 textarea {
     width: 100%;
-    height: 150px;
-    padding: 10px;
+    height: 180px;
+    padding: 12px;
     border-radius: 8px;
     border: 1px solid #ccc;
     margin-bottom: 10px;
+    resize: vertical;
+    font-size: 15px;
+    box-sizing: border-box;
 }
 
-/* File Input */
+
+/* =========================
+   FILE INPUT
+========================= */
 input[type="file"] {
     margin-top: 10px;
 }
 
-/* Radio */
+
+/* =========================
+   RADIO LABELS
+========================= */
 label {
     margin-right: 20px;
+    font-size: 15px;
+    color: #444;
 }
 
-/* Button */
+
+/* =========================
+   BUTTON
+========================= */
 button {
     width: 100%;
     padding: 12px;
@@ -65,28 +97,90 @@ button {
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
+    transition: 0.3s ease;
 }
 
-/* Button Hover */
+
+/* =========================
+   BUTTON HOVER
+========================= */
 button:hover {
     background: #5a67d8;
 }
 
-/* Output Box */
+
+/* =========================
+   BUTTON CLICK EFFECT
+========================= */
+button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   DISABLED BUTTON
+========================= */
+button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   OUTPUT BOX
+========================= */
 .output-box {
     background: #f4f4f4;
     padding: 15px;
     border-radius: 10px;
     min-height: 80px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    color: #333;
 }
 
-/* Button click effect */
-button:active {
-    transform: scale(0.97);
+
+/* =========================
+   OUTPUT HOVER EFFECT
+========================= */
+.output-box:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Disabled button */
-button:disabled {
-    background-color: #999;
-    cursor: not-allowed;
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+.error-message {
+    background-color: #ffdddd;
+    color: #d8000c;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-left: 5px solid #d8000c;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    textarea {
+        height: 140px;
+    }
+
+    button {
+        font-size: 14px;
+    }
 }
